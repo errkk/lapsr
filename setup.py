@@ -24,7 +24,7 @@ setup(
     version=__VERSION__,
     author='Eric George',
     description='',
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     zip_safe=False,
     package_dir={'': 'src'},
     packages=find_packages('src'),
