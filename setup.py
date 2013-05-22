@@ -17,6 +17,7 @@ install_dependencies = [
     'pyserial == 2.6',
     'RPi.GPIO == 0.5.2a',
     'Flask == 0.9',
+    'redis == 2.7.5',
 ]
 
 setup(
