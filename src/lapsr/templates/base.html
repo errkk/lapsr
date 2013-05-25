@@ -10,8 +10,7 @@
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
         <script>
-            setTimeout(window.reload, {{ INTERVAL }} * 1000);
-            
+            setInterval(window.reload, {{ INTERVAL }} * 1000);
         </script>
     </head>
     <body>
