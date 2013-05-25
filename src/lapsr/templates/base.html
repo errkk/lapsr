@@ -1,0 +1,20 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bikes</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Frame: {{ data.frame }}</h1>
+            <img class="img-polaroid" src="{{ data.IMAGES_URL }}{{ data.image }}" alt="Frame {{ data.frame }}" />
+            <p>Spaced used: <em>{{ data.space }}</em></p>
+        </div>
+    </body>
+</html>
