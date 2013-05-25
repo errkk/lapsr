@@ -5,6 +5,7 @@ import os
 from flask import Flask, render_template
 
 from lapsr.common import get_frame, get_space, FILENAME_FORMAT
+from lapsr.config.settings import INTERVAL
 
 
 app = Flask(__name__)
@@ -17,7 +18,8 @@ def hello():
         'frame': frame,
         'image': FILENAME_FORMAT.format(frame=frame),
         'IMAGES_URL': '/m/',
-        'space': get_space()
+        'space': get_space(),
+        'INTERVAL': INTERVAL
     }
     return render_template('base.html', data=data)
 

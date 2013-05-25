@@ -1,5 +1,7 @@
 #!/bin/sh
 
 echo 'Clearing Frames'
-rm /data/*
-echo '0' > tmp/frame.txt
+sudo stop lapsr_loop
+sudo rm -f /data/*
+sudo rm -f tmp/frame.txt
+sudo start lapsr_loop
