@@ -19,6 +19,8 @@ def get_frame():
 
 def get_space():
     output = check_output(['du', OUT_PATH])
-    bytes_used = int(output.split('\t')[0])
-    MB = bytes_used / 1000 / 1000.0
+    lines = output.split('\n')
+    last_line = lines[-2]
+    bytes_used = int(last_line.split('\t')[0])
+    MB = bytes_used / 1000.0
     return '{0:.3f} MB'.format(MB)

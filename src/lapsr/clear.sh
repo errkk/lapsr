@@ -1,7 +1,10 @@
 #!/bin/sh
 
-echo 'Clearing Frames'
+echo 'Stopping process'
 sudo stop lapsr_loop
-sudo rm -f /data/*
+echo 'Clearing frames'
+sudo rm -f /home/pi/mnt/*.jpg
+echo 'Resetting frame count'
 sudo rm -f tmp/frame.txt
-sudo start lapsr_loop
+echo 'To start again, run this:'
+echo 'sudo start lapsr_loop'
