@@ -12,8 +12,14 @@ from lapsr.config.settings import *
 display = TextStar('/dev/ttyAMA0')
 display.sendCmd('Starting...')
 display.setCurPos(2, 1)
+try:
 ip = check_output(['sh', 'ip.sh']).replace('addr:', '')
-display.sendCmd(ip)
+except:
+    print 'Cant get ip'
+    display.sendCmd('Unknown IP')
+else:
+    display.sendCmd(ip)
+
 display.setCurPos(1, 1)
 time.sleep(5)
 
