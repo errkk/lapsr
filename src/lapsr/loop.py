@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from lapsr.lib.TextStar import *
-from subprocess import call
+from subprocess import call, check_output
 import time
 
 from lapsr.common import FRAME_FILE, get_frame, get_space, FILENAME_FORMAT
@@ -11,7 +11,11 @@ from lapsr.config.settings import *
 # Initialise display
 display = TextStar('/dev/ttyAMA0')
 display.sendCmd('Starting...')
+display.setCurPos(2, 1)
+ip = check_output(['sh', 'ip.sh']).replace('addr:', '')
+display.sendCmd(ip)
 display.setCurPos(1, 1)
+time.sleep(5)
 
 # Pick up from last time
 frame = get_frame()

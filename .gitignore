@@ -20,7 +20,7 @@ lib64
 
 # Installer logs
 pip-log.txt
-
+src/lapsr/tmp/frame.txt
 # Unit test / coverage reports
 .coverage
 .tox

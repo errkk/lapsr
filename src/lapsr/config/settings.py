@@ -1,3 +1,3 @@
-INTERVAL = 2
-OUT_PATH = '/data'
-W, H = 640, 480
+INTERVAL = 5
+OUT_PATH = '/home/pi/mnt'
+W, H = 180, 768

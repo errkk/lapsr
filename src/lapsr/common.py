@@ -1,6 +1,8 @@
 import os
 from subprocess import check_output
 
+from lapsr.config.settings import OUT_PATH
+
 
 APP_ROUTE = os.path.dirname(os.path.abspath(__file__))
 FRAME_FILE = os.path.join(APP_ROUTE, 'tmp', 'frame.txt')
@@ -16,7 +18,7 @@ def get_frame():
 
 
 def get_space():
-    output = check_output(['du', '/data'])
+    output = check_output(['du', OUT_PATH])
     bytes_used = int(output.split('\t')[0])
     MB = bytes_used / 1000 / 1000.0
     return '{0:.3f} MB'.format(MB)
