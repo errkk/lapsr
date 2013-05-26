@@ -5,7 +5,8 @@ from lapsr.lib.TextStar import *
 from subprocess import call, check_output
 import time
 
-from lapsr.common import FRAME_FILE, get_frame, get_space, FILENAME_FORMAT
+from lapsr.common import FRAME_FILE, get_frame, get_space, FILENAME_FORMAT,\
+    APP_ROUTE
 from lapsr.config.settings import *
 
 # Initialise display
@@ -13,7 +14,8 @@ display = TextStar('/dev/ttyAMA0')
 display.sendCmd('Starting...')
 display.setCurPos(2, 1)
 try:
-ip = check_output(['sh', 'ip.sh']).replace('addr:', '')
+    ip = check_output(['sh', '{0}/ip.sh'.format(APP_ROUTE)])\
+            .replace('addr:', '')
 except:
     print 'Cant get ip'
     display.sendCmd('Unknown IP')
