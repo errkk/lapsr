@@ -30,8 +30,8 @@ frame = get_frame()
 loop_index = 0
 clear_next = True
 
-COMMAND = 'raspistill -o {out_path}/{frame} -w {w} -h {h} -t {t}'.format(
-    out_path=OUT_PATH, w=W, h=H, t=200, frame=FILENAME_FORMAT)
+COMMAND = 'raspistill -o {out_path}/{frame} -w {w} -h {h} -ISO {iso}'\
+        .format(out_path=OUT_PATH, w=W, h=H, frame=FILENAME_FORMAT, iso=ISO)
 
 
 def update_frame(frame):
